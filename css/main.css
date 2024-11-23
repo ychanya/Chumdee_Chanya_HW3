@@ -1,0 +1,151 @@
+html, body{
+    height: 100%;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #153677, #4e085f);
+}
+
+header{
+    padding: 50px 0 25px 0;
+    text-align: center;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header > h1{
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+}
+
+section{
+    width: 380px;
+    border-radius: 10px;
+    margin: 10px;
+    background: #fff;
+    color: #3f4447;
+    font-weight :500;
+    padding-bottom: 20px;
+    margin-top: 30px;
+}
+
+section:hover{
+    transform: scale(1.02);
+    transition-duration: 0.7s;
+    box-shadow: 0 15px 60px rgba(255, 255, 255, 0.3);
+}
+
+section h2{
+    padding: 5px 10px;
+    text-align: center;
+}
+
+#todo h2 {
+    color: #002765;
+}
+
+#inprogress h2{
+    color: #9142ea;
+}
+
+#done h2{
+    color: #ff5945;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 8px 12px 25px;
+}
+
+ul li span{
+    margin-left: 8px;
+}
+
+.todo li:nth-child(odd) {
+    background-color: rgba(0, 39,  101, 0.2);
+}
+.inprogress li:nth-child(odd) {
+    background-color: rgba(145, 66, 234, 0.2);
+}
+
+.done li:nth-child(odd){
+    background-color: rgba(255, 89, 69, 0.2);
+}
+
+footer{
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 100%;
+}
+
+input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+}
+
+#todo input[type="checkbox"]:checked+span+.emoji::after{
+    content: '⭐';
+    animation: fadeIn 0.5s;
+    padding-left: 5px;
+} 
+
+#inprogress input[type="checkbox"]:checked+span+.emoji::after{
+    content: '🔥';
+    animation: fadeIn 0.5s;
+    padding-left: 5px;
+}
+
+#done input[type="checkbox"]:checked+span+.emoji::after{
+    content: '🚀';
+    animation: fadeIn 0.5s;
+    padding-left: 5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked{
+    background-color: #ff5945;
+    border: #ff5945;
+}
+
+input[type="checkbox"]:checked::after{
+    content: '\2713';
+    text-align: center;
+    display: block;
+    font-weight: bold;
+}
